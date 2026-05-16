@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: shl-recommender
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false   # Set manually in Render dashboard
+    autoDeploy: true
